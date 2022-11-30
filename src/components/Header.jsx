@@ -5,7 +5,7 @@ import PersonCard from './PersonCard'
 
 const Header = () => {
   return (
-    <div className='py-2 px-4 flex justify-between items-end text-5xl border-b-2 border-yellow-400 bg-white sticky top-0'>
+    <div className='py-2 px-4 flex justify-between items-end text-5xl border-b-2 border-yellow-400 bg-white sticky top-0 z10'>
       <h1 className='text-5xl text-blue-400 font-extrabold cursor-pointer'>
         Where's <span className='text-red-500'>Waldo</span>
       </h1>

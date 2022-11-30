@@ -1,7 +1,7 @@
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 
-const DropDownMenu = ({ open, handleClick, anchorEl, position }) => {
+const DropDownMenu = ({ open, anchorEl, position, handleClick, checkClick }) => {
   return (
     <div>
       <Menu
@@ -11,13 +11,34 @@ const DropDownMenu = ({ open, handleClick, anchorEl, position }) => {
         open={open}
         onClose={handleClick}
         anchorOrigin={{
-          horizontal: position[0],
-          vertical: position[1],
+          horizontal: position.x,
+          vertical: position.y,
         }}
       >
-        <MenuItem onClick={handleClick}>Player 1</MenuItem>
-        <MenuItem onClick={handleClick}>Player 2</MenuItem>
-        <MenuItem onClick={handleClick}>Player 3</MenuItem>
+        <MenuItem
+          onClick={e => {
+            handleClick(e)
+            checkClick(e)
+          }}
+        >
+          Cat
+        </MenuItem>
+        <MenuItem
+          onClick={e => {
+            handleClick(e)
+            checkClick(e)
+          }}
+        >
+          Woman
+        </MenuItem>
+        <MenuItem
+          onClick={e => {
+            handleClick(e)
+            checkClick(e)
+          }}
+        >
+          Man
+        </MenuItem>
       </Menu>
     </div>
   )
