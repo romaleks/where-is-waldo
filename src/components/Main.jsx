@@ -1,5 +1,5 @@
 import DropDownMenu from './DropDownMenu'
-import pic from '../pic.jpg'
+import pic from '../assets/pic.jpg'
 import { useState } from 'react'
 
 const Main = () => {
