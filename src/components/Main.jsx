@@ -56,7 +56,7 @@ const Main = () => {
           1190 < clickCoords.x &&
           clickCoords.x < 1250 &&
           2040 < clickCoords.y &&
-          clickCoords.y < 2200
+          clickCoords.y < 2160
         ) {
           console.log('correct')
         } else {
@@ -75,7 +75,7 @@ const Main = () => {
             handleClick(e)
             calculateCoords(e)
           }}
-          className='h-full w-full cursor-pointer drop-shadow-2x'
+          className='h-full w-full cursor-pointer drop-shadow-2xl'
         ></img>
         <DropDownMenu
           open={open}
