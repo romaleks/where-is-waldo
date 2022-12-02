@@ -14,8 +14,8 @@ const Header = () => {
   })
 
   return (
-    <div className='py-2 px-4 flex justify-between items-end text-5xl border-b-2 border-yellow-400 bg-white sticky top-0 z-10'>
-      <h1 className='text-5xl text-blue-400 font-extrabold cursor-pointer'>
+    <div className='py-2 px-4 flex items-end gap-6 text-5xl border-b-2 border-yellow-400 bg-white sticky top-0 z-10'>
+      <h1 className='mr-auto text-5xl text-blue-400 font-extrabold cursor-pointer'>
         Where's <span className='text-red-500'>Waldo</span>
       </h1>
       <div className='flex gap-4'>

@@ -1,4 +1,5 @@
 import DropDownMenu from './DropDownMenu'
+import Notification from './Notification'
 import pic from '../assets/pic.jpg'
 import { useState } from 'react'
 
@@ -84,6 +85,7 @@ const Main = () => {
           handleClick={handleClick}
           checkClick={checkCLick}
         />
+        <Notification />
       </div>
     </div>
   )
