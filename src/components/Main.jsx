@@ -5,13 +5,15 @@ import { useState } from 'react'
 
 const Main = () => {
   const [anchorEl, setAnchorEl] = useState(null)
-  const [open, setOpen] = useState(false)
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 })
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [toastOpen, setToastOpen] = useState(false)
   const [clickCoords, setClickCoords] = useState({ x: 0, y: 0 })
+  const [toastState, setToastState] = useState({})
 
   const handleClick = e => {
     setAnchorEl(e.target)
-    setOpen(!open)
+    setMenuOpen(!menuOpen)
     setMenuPosition({ x: e.clientX - e.target.x, y: e.clientY - e.target.y })
   }
 
@@ -33,9 +35,15 @@ const Main = () => {
           1165 < clickCoords.y &&
           clickCoords.y < 1220
         ) {
-          console.log('correct')
+          setToastState({
+            title: 'Correctly!',
+            state: 'success',
+          })
         } else {
-          console.log('incorrect')
+          setToastState({
+            title: 'Wrong Person!',
+            state: 'error',
+          })
         }
         break
 
@@ -46,9 +54,15 @@ const Main = () => {
           845 < clickCoords.y &&
           clickCoords.y < 915
         ) {
-          console.log('correct')
+          setToastState({
+            title: 'Correctly!',
+            state: 'success',
+          })
         } else {
-          console.log('incorrect')
+          setToastState({
+            title: 'Wrong Person!',
+            state: 'error',
+          })
         }
         break
 
@@ -59,12 +73,20 @@ const Main = () => {
           2040 < clickCoords.y &&
           clickCoords.y < 2160
         ) {
-          console.log('correct')
+          setToastState({
+            title: 'Correctly!',
+            state: 'success',
+          })
         } else {
-          console.log('incorrect')
+          setToastState({
+            title: 'Wrong Person!',
+            state: 'error',
+          })
         }
         break
     }
+
+    setToastOpen(true)
   }
 
   return (
@@ -79,13 +101,13 @@ const Main = () => {
           className='h-full w-full cursor-pointer drop-shadow-2xl'
         ></img>
         <DropDownMenu
-          open={open}
+          open={menuOpen}
           anchorEl={anchorEl}
           position={menuPosition}
           handleClick={handleClick}
           checkClick={checkCLick}
         />
-        <Notification />
+        <Notification open={toastOpen} setOpen={setToastOpen} state={toastState} />
       </div>
     </div>
   )
